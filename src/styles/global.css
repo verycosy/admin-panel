@@ -17,3 +17,12 @@
 .ant-form-item {
   margin-bottom: 0px;
 }
+
+.ant-statistic-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.ant-card-head {
+  font-weight: 600;
+}

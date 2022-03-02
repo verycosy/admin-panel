@@ -13,7 +13,7 @@ export const SideMenu: React.FC = () => {
   return (
     <Menu theme="dark" selectedKeys={[pathname.split('/')[1]]}>
       <Menu.Item icon={<HomeOutlined />} key="">
-        <Link to="/">홈</Link>
+        <Link to="/">서비스 현황</Link>
       </Menu.Item>
       <Menu.Item icon={<NotificationOutlined />} key="notice">
         <Link to="/notices">공지사항</Link>

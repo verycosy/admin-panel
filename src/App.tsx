@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/shared/Layout';
-import { HomePage } from './pages/home';
+import { HomePage } from './pages/home/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { UsersPage } from './pages/users/UsersPage';
 import { UserPage } from './pages/users/[userId]/UserPage';
