@@ -1,24 +1,28 @@
-import React from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/shared/Layout';
 import { HomePage } from './pages/home';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { UsersPage } from './pages/users/UsersPage';
-import { UserPage } from './pages/users/[id]/UserPage';
+import { UserPage } from './pages/users/[userId]/UserPage';
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="" element={<HomePage />} />
-          <Route path="users" element={<UsersPage />}>
-            <Route path=":userId" element={<UserPage />} />
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="" element={<HomePage />} />
+            <Route path="users" element={<UsersPage />}>
+              <Route path=":userId" element={<UserPage />} />
+            </Route>
           </Route>
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 
